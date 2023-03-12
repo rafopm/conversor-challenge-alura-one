@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane minWidth="-Infinity" prefHeight="722.0" prefWidth="976.0" style="-fx-border-style: solid;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.ViewCambioController">
+   <children>
+      <AnchorPane layoutX="17.0" layoutY="16.0" prefHeight="302.0" prefWidth="942.0" style="-fx-border-style: solid; -fx-border-color: orange;" AnchorPane.bottomAnchor="405.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="15.0">
+         <children>
+            <Label layoutX="21.0" layoutY="14.0" text="Divisa Origen" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <TextField fx:id="txtMonto" disable="true" layoutX="552.0" layoutY="212.0" onKeyTyped="#SoloNumeros" prefHeight="34.0" prefWidth="130.0" AnchorPane.leftAnchor="552.0" AnchorPane.rightAnchor="277.0" />
+            <Button fx:id="btnGuardar" layoutX="483.0" layoutY="256.0" mnemonicParsing="false" onAction="#btnGuardarOnAction" prefHeight="34.0" prefWidth="212.0" text="Guardar" AnchorPane.leftAnchor="483.0" AnchorPane.rightAnchor="258.0" />
+            <Button fx:id="btnCancelar" disable="true" layoutX="273.0" layoutY="255.0" mnemonicParsing="false" onAction="#btnCancelarOnAction" prefHeight="34.0" prefWidth="188.0" text="Cancelar" AnchorPane.leftAnchor="272.0" AnchorPane.rightAnchor="480.0" />
+            <TableView fx:id="tvDivisaOrigen" layoutX="9.0" layoutY="31.0" onMouseClicked="#onMouseClickedDivisaOrigen" prefHeight="172.0" prefWidth="450.0">
+              <columns>
+                <TableColumn fx:id="idOrigenCol" prefWidth="40.0" text="ID" />
+                <TableColumn fx:id="isoOrigenCol" prefWidth="62.0" text="ISO" />
+                  <TableColumn fx:id="nombreOrigenCol" prefWidth="347.0" text="Nombre" />
+              </columns>
+            </TableView>
+            <Label layoutX="477.0" layoutY="14.0" text="Divisa Destino">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="484.0" layoutY="220.0" text="Equivale a:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tvDivisaDestino" layoutX="478.0" layoutY="31.0" onMouseClicked="#onMouseClickedDivisaDestino" prefHeight="172.0" prefWidth="450.0">
+               <columns>
+                  <TableColumn fx:id="idDestinoCol" prefWidth="40.0" text="ID" />
+                  <TableColumn fx:id="isoDestinoCol" prefWidth="62.0" text="ISO" />
+                  <TableColumn fx:id="nombreDestinoCol" prefWidth="347.0" text="Nombre" />
+               </columns>
+            </TableView>
+            <Label layoutX="201.0" layoutY="215.0" text="1">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblDivisaDestino" layoutX="681.0" layoutY="219.0" prefHeight="25.0" prefWidth="241.0" style="-fx-background-color: yellow;" text="Selecciona la divisa de destino">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblDivisaOrigen" layoutX="218.0" layoutY="215.0" prefHeight="25.0" prefWidth="241.0" style="-fx-background-color: yellow;" text="Selecciona la divisa de destino">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="12.0" layoutY="329.0" prefHeight="376.0" prefWidth="950.0" style="-fx-border-style: solid; -fx-border-color: brown;">
+         <children>
+            <TableView fx:id="tvTipoCambio" layoutX="9.0" layoutY="12.0" prefHeight="356.0" prefWidth="935.0">
+               <columns>
+                  <TableColumn fx:id="idCambioVistaCol" prefWidth="43.0" text="ID" />
+                  <TableColumn fx:id="isoOrigenVistaCol" prefWidth="49.0" text="ISO" />
+                  <TableColumn fx:id="divisaOrigenVistaCol" prefWidth="277.0" text="Divisa Origen" />
+                  <TableColumn fx:id="isoDestinoVistaCol" prefWidth="43.0" text="ISO" />
+                  <TableColumn fx:id="divisaDestinoVistaCol" prefWidth="272.0" text="Divisa Destino" />
+                  <TableColumn fx:id="cambioVistaCol" prefWidth="72.0" text="Cambio" />
+                  <TableColumn fx:id="fechaVistaCol" minWidth="8.0" prefWidth="136.0" text="Fecha Actualización" />
+               </columns></TableView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

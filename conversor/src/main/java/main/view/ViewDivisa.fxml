@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane minWidth="-Infinity" prefHeight="410.0" prefWidth="1011.0" style="-fx-border-style: solid;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.ViewDivisaController">
+   <children>
+      <AnchorPane layoutX="19.0" layoutY="24.0" prefHeight="364.0" prefWidth="321.0" style="-fx-border-style: solid; -fx-border-color: orange;" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="672.0" AnchorPane.topAnchor="23.0">
+         <children>
+            <Label layoutX="21.0" layoutY="14.0" text="Nombre:" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+            <TextField fx:id="txtNombre" layoutX="14.0" layoutY="41.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="35.0" />
+            <Label layoutX="11.0" layoutY="69.0" text="ISO" />
+            <Label layoutX="9.0" layoutY="125.0" text="Símbolo" />
+            <Label layoutX="10.0" layoutY="181.0" text="País" />
+            <TextField fx:id="txtISO" layoutX="9.0" layoutY="90.0" prefHeight="25.0" prefWidth="295.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="16.0" />
+            <TextField fx:id="txtSimbolo" layoutX="11.0" layoutY="145.0" prefHeight="25.0" prefWidth="293.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="16.0" />
+            <Button fx:id="btnGuardar" layoutX="11.0" layoutY="297.0" mnemonicParsing="false" onAction="#btnGuardarOnAction" text="Guardar" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0" />
+            <Button fx:id="btnCancelar" disable="true" layoutX="11.0" layoutY="331.0" mnemonicParsing="false" onAction="#btnCancelarOnAction" text="Cancelar" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0" />
+            <TextField fx:id="txtIddivisa" editable="false" layoutX="84.0" layoutY="7.0" visible="false" />
+            <TextField fx:id="txtImagen" layoutX="10.0" layoutY="261.0" prefHeight="25.0" prefWidth="293.0" />
+            <Label layoutX="8.0" layoutY="241.0" text="Imagen (URL)" />
+            <TextField fx:id="txtPais" layoutX="10.0" layoutY="206.0" prefHeight="25.0" prefWidth="293.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="367.0" layoutY="21.0" prefHeight="368.0" prefWidth="622.0" style="-fx-border-style: solid; -fx-border-color: brown;">
+         <children>
+            <TableView fx:id="tvDivisa" layoutX="14.0" layoutY="14.0" prefHeight="346.0" prefWidth="580.0">
+               <columns>
+                  <TableColumn fx:id="iddivisaCol" prefWidth="49.0" text="ID" />
+                  <TableColumn fx:id="nombreCol" prefWidth="122.0" text="Nombre" />
+                  <TableColumn fx:id="isoCol" prefWidth="104.0" text="ISO" />
+                  <TableColumn fx:id="simboloCol" prefWidth="108.0" text="Símbolo" />
+                  <TableColumn fx:id="paisCol" minWidth="8.0" prefWidth="92.0" text="País" />
+                  <TableColumn fx:id="imagenCol" prefWidth="103.0" text="Imagen" />
+               </columns></TableView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
