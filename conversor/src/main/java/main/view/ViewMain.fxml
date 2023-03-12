@@ -14,27 +14,46 @@
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <TextField fx:id="txtMonto" layoutX="268.0" layoutY="38.0" prefHeight="54.0" prefWidth="232.0" />
-                  <TableView fx:id="tvDe" layoutX="14.0" layoutY="113.0" prefHeight="105.0" prefWidth="341.0">
+                  <TextField fx:id="txtMonto1" layoutX="124.0" layoutY="282.0" prefHeight="54.0" prefWidth="232.0" />
+                  <TableView fx:id="tvDe" layoutX="14.0" layoutY="113.0" onMouseClicked="#onMouseClickedDivisaOrigen" prefHeight="141.0" prefWidth="341.0">
                     <columns>
                       <TableColumn fx:id="isoColum1" prefWidth="60.0" resizable="false" text="ISO" />
                       <TableColumn fx:id="nombreColum1" prefWidth="285.0" text="C2" />
-                        <TableColumn fx:id="cambioColum1" prefWidth="93.0" text="Cambio" />
-                        <TableColumn fx:id="banderaColumn1" prefWidth="75.0" text="Bandera" />
+                        <TableColumn fx:id="cambioColum1" prefWidth="93.0" text="Cambio" visible="false" />
+                        <TableColumn fx:id="banderaColumn1" prefWidth="75.0" text="Bandera" visible="false" />
                     </columns>
                   </TableView>
-                  <TableView fx:id="tvA" blendMode="LIGHTEN" layoutX="418.0" layoutY="113.0" prefHeight="105.0" prefWidth="349.0">
+                  <TableView fx:id="tvA" layoutX="418.0" layoutY="113.0" prefHeight="141.0" prefWidth="349.0">
                      <columns>
                         <TableColumn fx:id="isoColum2" prefWidth="60.0" text="ISO" />
                         <TableColumn fx:id="nombreColum2" prefWidth="303.0" text="C2" />
+                        <TableColumn fx:id="cambioColum2" prefWidth="93.0" text="Cambio" visible="false" />
+                        <TableColumn fx:id="banderaColumn2" prefWidth="75.0" text="Bandera" visible="false" />
                      </columns>
                   </TableView>
-                  <Label fx:id="lblDe" layoutX="83.0" layoutY="244.0" prefHeight="46.0" prefWidth="214.0" text="Label" />
-                  <Label fx:id="lblA" layoutX="445.0" layoutY="244.0" prefHeight="46.0" prefWidth="214.0" text="Label" />
-                  <Button fx:id="btnCrossover" layoutX="358.0" layoutY="155.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="52.0" text="Button" />
-                  <Button fx:id="btnCalcular" layoutX="526.0" layoutY="38.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="70.0" text="Button" />
-                  <ImageView fx:id="imgBandera1" fitHeight="53.0" fitWidth="106.0" layoutX="14.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label fx:id="lblDe" layoutX="240.0" layoutY="22.0" prefHeight="46.0" prefWidth="52.0" text="Label">
+                     <font>
+                        <Font name="Arial Black" size="24.0" />
+                     </font></Label>
+                  <Label fx:id="lblA" layoutX="443.0" layoutY="23.0" prefHeight="46.0" prefWidth="214.0" text="Label">
+                     <font>
+                        <Font name="Arial Black" size="24.0" />
+                     </font></Label>
+                  <Button fx:id="btnCrossover" layoutX="703.0" layoutY="279.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="52.0" text="Button" />
+                  <Button fx:id="btnCalcular" layoutX="32.0" layoutY="283.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="70.0" text="Button" />
+                  <ImageView fx:id="imgBandera1" fitHeight="53.0" fitWidth="106.0" layoutX="14.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true" />
                   <ImageView fx:id="imgBandera2" fitHeight="53.0" fitWidth="106.0" layoutX="637.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label fx:id="lblDe1" layoutX="224.0" layoutY="65.0" prefHeight="46.0" prefWidth="52.0" text="Label">
+                     <font>
+                        <Font name="Arial Black" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblA1" layoutX="443.0" layoutY="65.0" prefHeight="46.0" prefWidth="214.0" text="Label">
+                     <font>
+                        <Font name="Arial Black" size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtMonto2" layoutX="418.0" layoutY="282.0" prefHeight="54.0" prefWidth="232.0" />
                </children></AnchorPane>
       </content>
     </Tab>
@@ -58,6 +77,16 @@
                     </rowConstraints>
                      <children>
                         <Button fx:id="btnAdminUsuarios" mnemonicParsing="false" onAction="#btnAdminUsuariosOnAction" prefHeight="85.0" prefWidth="203.0" style="-fx-background-color: orange;" text="Administrar Usuarios">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnAdminTCambio" contentDisplay="CENTER" layoutX="10.0" layoutY="95.0" mnemonicParsing="false" onAction="#btnAdminTCambioOnAction" prefHeight="85.0" prefWidth="203.0" style="-fx-background-color: orange;" text="Administrar Tipos de Cambio" textOverrun="LEADING_WORD_ELLIPSIS" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnAdminDivisa" contentDisplay="CENTER" layoutX="231.0" layoutY="95.0" mnemonicParsing="false" onAction="#btnAdminDivisaOnAction" prefHeight="85.0" prefWidth="203.0" style="-fx-background-color: orange;" text="Administrar Divisas" textOverrun="LEADING_WORD_ELLIPSIS" GridPane.columnIndex="2">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>
