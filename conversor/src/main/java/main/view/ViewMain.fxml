@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
@@ -14,28 +16,31 @@
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <TextField fx:id="txtMonto1" layoutX="124.0" layoutY="282.0" prefHeight="54.0" prefWidth="232.0" />
-                  <TableView fx:id="tvDe" layoutX="14.0" layoutY="113.0" onMouseClicked="#onMouseClickedDivisaOrigen" prefHeight="141.0" prefWidth="341.0">
+                  <TextField fx:id="txtMonto1" layoutX="124.0" layoutY="282.0" onKeyTyped="#txtMonto1InputTextChanged" prefHeight="54.0" prefWidth="232.0" />
+                  <TableView fx:id="tvDe" editable="true" layoutX="14.0" layoutY="113.0" onMouseClicked="#onMouseClickedDivisaOrigen" prefHeight="141.0" prefWidth="360.0" scaleShape="false">
                     <columns>
-                      <TableColumn fx:id="isoColum1" prefWidth="60.0" resizable="false" text="ISO" />
-                      <TableColumn fx:id="nombreColum1" prefWidth="285.0" text="C2" />
-                        <TableColumn fx:id="cambioColum1" prefWidth="93.0" text="Cambio" visible="false" />
-                        <TableColumn fx:id="banderaColumn1" prefWidth="75.0" text="Bandera" visible="false" />
+                      <TableColumn fx:id="isoColum1" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" resizable="false" text="ISO_" />
+                      <TableColumn fx:id="nombreColum1" maxWidth="280.0" minWidth="280.0" prefWidth="280.0" resizable="false" text="NOMBRE_" />
+                        <TableColumn fx:id="cambioColum1" maxWidth="1.0" minWidth="1.0" prefWidth="1.0" resizable="false" text="Cambio1" visible="false" />
+                        <TableColumn fx:id="banderaColumn1" maxWidth="1.0" minWidth="1.0" prefWidth="1.0" resizable="false" text="Bandera1" visible="false" />
                     </columns>
                   </TableView>
-                  <TableView fx:id="tvA" layoutX="418.0" layoutY="113.0" prefHeight="141.0" prefWidth="349.0">
-                     <columns>
-                        <TableColumn fx:id="isoColum2" prefWidth="60.0" text="ISO" />
-                        <TableColumn fx:id="nombreColum2" prefWidth="303.0" text="C2" />
-                        <TableColumn fx:id="cambioColum2" prefWidth="93.0" text="Cambio" visible="false" />
-                        <TableColumn fx:id="banderaColumn2" prefWidth="75.0" text="Bandera" visible="false" />
-                     </columns>
+                  <TableView fx:id="tvA" layoutX="418.0" layoutY="112.0" prefHeight="143.0" prefWidth="360.0" scaleShape="false">
+                    <columns>
+                      <TableColumn fx:id="isoColum2" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" resizable="false" text="_ISO" />
+                      <TableColumn fx:id="nombreColum2" maxWidth="280.0" minWidth="280.0" prefWidth="280.0" resizable="false" text="_NOMBRE" />
+                        <TableColumn fx:id="cambioColum2" maxWidth="1.0" minWidth="1.0" prefWidth="1.0" resizable="false" text="cambio2" visible="false" />
+                        <TableColumn fx:id="banderaColumn2" maxWidth="1.0" minWidth="1.0" prefWidth="1.0" resizable="false" text="bandera2" visible="false" />
+                    </columns>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
                   </TableView>
-                  <Label fx:id="lblDe" layoutX="240.0" layoutY="22.0" prefHeight="46.0" prefWidth="52.0" text="Label">
+                  <Label fx:id="lblDe" layoutX="329.0" layoutY="22.0" prefHeight="46.0" prefWidth="45.0" text="Label">
                      <font>
                         <Font name="Arial Black" size="24.0" />
                      </font></Label>
-                  <Label fx:id="lblA" layoutX="443.0" layoutY="23.0" prefHeight="46.0" prefWidth="214.0" text="Label">
+                  <Label fx:id="lblA" layoutX="418.0" layoutY="23.0" prefHeight="46.0" prefWidth="214.0" text="Label">
                      <font>
                         <Font name="Arial Black" size="24.0" />
                      </font></Label>
@@ -43,17 +48,22 @@
                   <Button fx:id="btnCalcular" layoutX="32.0" layoutY="283.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="70.0" text="Button" />
                   <ImageView fx:id="imgBandera1" fitHeight="53.0" fitWidth="106.0" layoutX="14.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true" />
                   <ImageView fx:id="imgBandera2" fitHeight="53.0" fitWidth="106.0" layoutX="637.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label fx:id="lblDe1" layoutX="224.0" layoutY="65.0" prefHeight="46.0" prefWidth="52.0" text="Label">
+                  <Label fx:id="lblDe1" alignment="CENTER_RIGHT" layoutX="137.0" layoutY="65.0" prefHeight="46.0" prefWidth="237.0" text="Label">
                      <font>
-                        <Font name="Arial Black" size="24.0" />
+                        <Font name="Arial Black" size="16.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lblA1" layoutX="443.0" layoutY="65.0" prefHeight="46.0" prefWidth="214.0" text="Label">
+                  <Label fx:id="lblA1" layoutX="418.0" layoutY="65.0" prefHeight="46.0" prefWidth="264.0" text="Label">
                      <font>
-                        <Font name="Arial Black" size="24.0" />
+                        <Font name="Arial Black" size="16.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="txtMonto2" layoutX="418.0" layoutY="282.0" prefHeight="54.0" prefWidth="232.0" />
+                  <TextField fx:id="txtMonto2" layoutX="418.0" layoutY="282.0" onInputMethodTextChanged="#txtMonto2InputTextChanged" prefHeight="54.0" prefWidth="232.0" />
+                  <Label fx:id="lblDe2" layoutX="384.0" layoutY="19.0" prefHeight="46.0" prefWidth="27.0" text="=" textAlignment="CENTER">
+                     <font>
+                        <Font name="Arial Black" size="36.0" />
+                     </font>
+                  </Label>
                </children></AnchorPane>
       </content>
     </Tab>

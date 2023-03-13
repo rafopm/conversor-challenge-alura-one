@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import main.dao.VistaTipoDeCambioDao;
 import main.model.Divisa;
@@ -50,6 +51,16 @@ public class ViewMainController implements Initializable {
     @FXML
     private Tab tabConversorDivisas;
 
+
+
+    @FXML
+    private TableView<VistaTipoDeCambio> tvDe;
+
+    @FXML
+    private TableView<VistaTipoDeCambio> tvA;
+
+    @FXML
+    private TableColumn cambioColum2;
     @FXML
     private TableColumn banderaColumn1;
 
@@ -58,12 +69,10 @@ public class ViewMainController implements Initializable {
 
     @FXML
     private TableColumn isoColum2;
-
-    @FXML
-    private TableView<VistaTipoDeCambio> tvDe;
-
     @FXML
     private TableColumn nombreColum2;
+    @FXML
+    private TableColumn banderaColumn2;
 
     @FXML
     private TableColumn nombreColum1;
@@ -86,8 +95,7 @@ public class ViewMainController implements Initializable {
     @FXML
     private ImageView imgBandera2;
 
-    @FXML
-    private TableView<?> tvA;
+
 
     @FXML
     private ImageView imgBandera1;
@@ -99,6 +107,17 @@ public class ViewMainController implements Initializable {
 
     @FXML
     private Button btnAdminDivisa;
+    @FXML
+    private TextField txtMonto2;
+
+    @FXML
+    private TextField txtMonto1;
+    @FXML
+    private Label lblDe1;
+    @FXML
+    private Label lblA1;
+
+
 
     private VistaTipoDeCambioDao vistaTipoDeCambioDao;
 
@@ -107,8 +126,11 @@ public class ViewMainController implements Initializable {
 
     private VistaTipoDeCambio cambioDeSeleccionado;
     private VistaTipoDeCambio cambioASeleccionado;
-    private int indiceDe;
-    private int indiceA;
+    private double indiceDe;
+    private double indiceA;
+
+    private double monedaOrigen;
+    private double monedaDestino;
 
     private String banderaDe;
     private String banderaA;
@@ -119,12 +141,35 @@ public class ViewMainController implements Initializable {
     }
 
     public void initialize(URL url, ResourceBundle rb) {
+
+        txtMonto1.textProperty().addListener((observable, oldValue, newValue) -> {
+            if(newValue.equals("")){
+                System.out.println("Tendria que salir esto al seleccionar alguna opcion de campo1");
+                indiceA = 0;
+            }
+            indiceA = cambioDeSeleccionado.getCambio2();
+        });
+
+        txtMonto2.textProperty().addListener((observable, oldValue, newValue) -> {
+            if(newValue.equals("")){
+                System.out.println("Tendria que salir esto al seleccionar alguna opcion de campo1");
+                indiceDe = 0;
+            } else{
+                indiceDe = cambioDeSeleccionado.getCambio2();
+                System.out.println(indiceDe);
+            }
+
+        });
+
+
         this.vistaTipoDeCambioDao = new VistaTipoDeCambioDao();
         cargarTipoDeCambio();
         //
         tvDe.getSelectionModel().select(0);
-        PoblarCamposDe();
+        tvA.getSelectionModel().select(0);
 
+        PoblarCamposDe();
+        PoblarCamposA();
     }
 
     @FXML
@@ -162,25 +207,43 @@ public class ViewMainController implements Initializable {
         tvDe.getColumns().clear();
 
         List<VistaTipoDeCambio> tiposDeCambioDB = this.vistaTipoDeCambioDao.listar();
-        List<VistaTipoDeCambio> cambioOrigenFiltro = tiposDeCambioDB.stream()
+
+        //Divisas Origen
+        List<VistaTipoDeCambio> cambioOrigenFiltro1 = tiposDeCambioDB.stream()
                 .filter(distinctByKey(p -> p.getIsoo()))
                 .collect(Collectors.toList());
 
-        System.out.println(cambioOrigenFiltro);
-        ObservableList<VistaTipoDeCambio> datatc = FXCollections.observableArrayList(cambioOrigenFiltro);
-        //Divisas Origen
+        //System.out.println(cambioOrigenFiltro1);
+        ObservableList<VistaTipoDeCambio> datatc1 = FXCollections.observableArrayList(cambioOrigenFiltro1);
+
 
         isoColum1.setCellValueFactory(new PropertyValueFactory<VistaTipoDeCambio, String>("isoo"));
         nombreColum1.setCellValueFactory(new PropertyValueFactory<VistaTipoDeCambio, String>("nombreo"));
         cambioColum1.setCellValueFactory(new PropertyValueFactory<VistaTipoDeCambio, String>("cambio1"));
         banderaColumn1.setCellValueFactory(new PropertyValueFactory<VistaTipoDeCambio, String>("bandera1"));
 
-        tvDe.setItems(datatc);
+        tvDe.setItems(datatc1);
         tvDe.getColumns().addAll(isoColum1, nombreColum1, cambioColum1, banderaColumn1);
 
+        //tvDe.setFixedCellSize(0);
 
-        //idtipocambio,   isoo, nombreo, isod, nombred, fechaactualizacion, cambio
-        //idCambioVistaCol, isoOrigenVistaCol,  divisaOrigenVistaCol, isoDestinoVistaCol, divisaDestinoVistaCol, cambioVistaCol, fechaVistaCol
+        //Divisas Destino
+        List<VistaTipoDeCambio> cambioOrigenFiltro2 = tiposDeCambioDB.stream()
+                .filter(distinctByKey(p -> p.getIsod()))
+                .collect(Collectors.toList());
+
+        //System.out.println(cambioOrigenFiltro2);
+        ObservableList<VistaTipoDeCambio> datatc2 = FXCollections.observableArrayList(cambioOrigenFiltro2);
+
+        isoColum2.setCellValueFactory(new PropertyValueFactory<VistaTipoDeCambio, String>("isod"));
+        nombreColum2.setCellValueFactory(new PropertyValueFactory<VistaTipoDeCambio, String>("nombred"));
+        cambioColum2.setCellValueFactory(new PropertyValueFactory<VistaTipoDeCambio, String>("cambio2"));
+        banderaColumn2.setCellValueFactory(new PropertyValueFactory<VistaTipoDeCambio, String>("bandera2"));
+
+        tvA.setItems(datatc2);
+        tvA.setFixedCellSize(0);
+        //tvA.getColumns().addAll(isoColum2, nombreColum2, cambioColum2, banderaColumn2);
+
     }
 
 
@@ -190,6 +253,20 @@ public class ViewMainController implements Initializable {
         String bandera = cambioDeSeleccionado.getBandera1();
         MostrarBandera(bandera, imgBandera1);
         lblDe.setText(String.valueOf(cambioDeSeleccionado.getCambio1()));
+        lblDe1.setText(cambioDeSeleccionado.getNombreo());
+        txtMonto1.setText(String.valueOf(cambioDeSeleccionado.getCambio1()));
+        indiceDe = cambioDeSeleccionado.getCambio1();
+    }
+
+    public void PoblarCamposA() {
+        int index = tvA.getSelectionModel().getSelectedIndex();
+        cambioASeleccionado = tvA.getItems().get(index);
+        String bandera = cambioASeleccionado.getBandera2();
+        MostrarBandera(bandera, imgBandera2);
+        lblA.setText(String.valueOf(cambioASeleccionado.getCambio2()));
+        lblA1.setText(cambioASeleccionado.getNombred());
+        txtMonto2.setText(String.valueOf(cambioASeleccionado.getCambio2()));
+        indiceA = cambioASeleccionado.getCambio2();
     }
 
     private void MostrarBandera(String bandera, ImageView imageView) {
@@ -226,6 +303,33 @@ public class ViewMainController implements Initializable {
         if (tvDe.getSelectionModel().getSelectedItem() != null) {
             PoblarCamposDe();
         }
+    }
+    @FXML
+    void onMouseClickedDivisaDestino(ActionEvent event) {
+
+    }
+
+    @FXML
+    void txtMonto1InputTextChanged(KeyEvent keyEvent) {
+        txtMonto1.textProperty().addListener((observable, oldValue, newValue) -> {
+            indiceDe = Double.parseDouble(newValue);
+            Calcular(indiceDe, indiceA);
+            txtMonto2.setText(String.valueOf(monedaDestino));
+            // Aquí puedes agregar el código que quieras ejecutar cuando el texto cambie
+        });
+    }
+
+
+
+    @FXML
+    void txtMonto2InputTextChanged(ActionEvent event) {
+
+    }
+
+    void Calcular(double indiceDe, double indiceA){
+        //indiceDe indiceA
+        monedaDestino = indiceDe * indiceA;
+
     }
 
 }

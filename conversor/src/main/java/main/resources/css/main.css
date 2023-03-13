@@ -1,0 +1,8 @@
+.no-header .table-row-cell {
+    -fx-padding: 0;
+    -fx-border-width: 0;
+    -fx-background-insets: 0;
+    -fx-background-color: transparent;
+    -fx-height: 0;
+    -fx-title-side: Side;
+}

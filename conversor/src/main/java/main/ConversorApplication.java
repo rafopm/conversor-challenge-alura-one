@@ -34,6 +34,8 @@ public class ConversorApplication extends Application {
         System.out.println("URL:"+ uri);
         Parent root = FXMLLoader.load(uri.toURL());
         Scene scene = new Scene(root);
+        //scene.getStylesheets().add("main/resources/css/main.css");
+        //scene.getStylesheets().add(getClass().getResource("src/main/java/main/resources/css/main.css").toExternalForm());
         stage.setTitle("Acceso");
         stage.setScene(scene);
         stage.show();
