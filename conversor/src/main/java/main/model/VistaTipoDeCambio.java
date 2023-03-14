@@ -6,10 +6,12 @@ public class VistaTipoDeCambio {
     private String nombreo;
     private String bandera1;
     private double cambio1;
+    private String simbolo1;
     private String isod;
     private String nombred;
     private String bandera2;
     private double cambio2;
+    private String simbolo2;
     private String fechaactualizacion;
 
 
@@ -56,6 +58,14 @@ public class VistaTipoDeCambio {
         this.cambio1 = cambio1;
     }
 
+    public String getSimbolo1() {
+        return simbolo1;
+    }
+
+    public void setSimbolo1(String simbolo1) {
+        this.simbolo1 = simbolo1;
+    }
+
     public String getIsod() {
         return isod;
     }
@@ -88,6 +98,14 @@ public class VistaTipoDeCambio {
         this.cambio2 = cambio2;
     }
 
+    public String getSimbolo2() {
+        return simbolo2;
+    }
+
+    public void setSimbolo2(String simbolo2) {
+        this.simbolo2 = simbolo2;
+    }
+
     public String getFechaactualizacion() {
         return fechaactualizacion;
     }
@@ -104,10 +122,12 @@ public class VistaTipoDeCambio {
         sb.append(", nombreo='").append(nombreo).append('\'');
         sb.append(", bandera1='").append(bandera1).append('\'');
         sb.append(", cambio1=").append(cambio1);
+        sb.append(", simbolo1='").append(simbolo1).append('\'');
         sb.append(", isod='").append(isod).append('\'');
         sb.append(", nombred='").append(nombred).append('\'');
         sb.append(", bandera2='").append(bandera2).append('\'');
         sb.append(", cambio2=").append(cambio2);
+        sb.append(", simbolo2='").append(simbolo2).append('\'');
         sb.append(", fechaactualizacion='").append(fechaactualizacion).append('\'');
         sb.append('}');
         return sb.toString();

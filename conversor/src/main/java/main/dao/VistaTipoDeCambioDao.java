@@ -28,17 +28,18 @@ public class VistaTipoDeCambioDao {
             ResultSet data = sentencia.executeQuery();
             while (data.next()) {
                 VistaTipoDeCambio vistaTipoDeCambio = new VistaTipoDeCambio();
-                vistaTipoDeCambio.setIdtipocambio(data.getString(1)); //USDEUR
+                vistaTipoDeCambio.setIdtipocambio(data.getString(1)); //USDARS
                 vistaTipoDeCambio.setIsoo(data.getString(2)); //USD
                 vistaTipoDeCambio.setNombreo(data.getString(3)); //"Dólar estadounidense"
                 vistaTipoDeCambio.setBandera1(data.getString(4)); //bandera1
-                vistaTipoDeCambio.setIsod(data.getString(5)); // EUR
+                vistaTipoDeCambio.setSimbolo1(data.getString(5)); //"Simbolo2"
                 vistaTipoDeCambio.setCambio1(data.getDouble(6)); //1
-                vistaTipoDeCambio.setNombred(data.getString(7)); //Euro
-                vistaTipoDeCambio.setBandera2(data.getString(8)); //bandera2
-                vistaTipoDeCambio.setFechaactualizacion(data.getString(9)); //2023-03-11 16:15:53
-                vistaTipoDeCambio.setCambio2(data.getDouble(10)); //0.9400000000
-
+                vistaTipoDeCambio.setIsod(data.getString(7)); // EUR
+                vistaTipoDeCambio.setNombred(data.getString(8)); //Euro
+                vistaTipoDeCambio.setBandera2(data.getString(9)); //bandera2
+                vistaTipoDeCambio.setSimbolo2(data.getString(10)); //Simbolo2
+                vistaTipoDeCambio.setCambio2(data.getDouble(11)); //0.9400000000
+                vistaTipoDeCambio.setFechaactualizacion(data.getString(12)); //2023-03-11 16:15:53
 
                 listaTipoDeCambio.add(vistaTipoDeCambio);
             }

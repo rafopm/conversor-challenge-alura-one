@@ -14,73 +14,85 @@
   <tabs>
     <Tab fx:id="tabConversorDivisas" text="Conversor de divisas">
       <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="389.0" prefWidth="800.0" style="-fx-background-color: #1f1f1f;">
                <children>
-                  <TableView fx:id="tvDe" editable="true" layoutX="14.0" layoutY="113.0" onMouseClicked="#onMouseClickedDivisaOrigen" prefHeight="141.0" prefWidth="360.0" scaleShape="false">
+                  <TableView fx:id="tvDe" editable="true" layoutX="14.0" layoutY="113.0" onMouseClicked="#onMouseClickedDivisaOrigen" prefHeight="141.0" prefWidth="360.0" scaleShape="false" style=": ;">
                     <columns>
                       <TableColumn fx:id="isoColum1" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" resizable="false" text="ISO_" />
-                      <TableColumn fx:id="nombreColum1" maxWidth="280.0" minWidth="280.0" prefWidth="280.0" resizable="false" text="NOMBRE_" />
-                        <TableColumn fx:id="cambioColum1" maxWidth="1.0" minWidth="1.0" prefWidth="1.0" resizable="false" text="Cambio1" visible="false" />
-                        <TableColumn fx:id="banderaColumn1" maxWidth="1.0" minWidth="1.0" prefWidth="1.0" resizable="false" text="Bandera1" visible="false" />
+                      <TableColumn fx:id="nombreColum1" maxWidth="295.0" minWidth="295.0" prefWidth="295.0" resizable="false" text="NOMBRE_" />
                     </columns>
                   </TableView>
-                  <TableView fx:id="tvA" layoutX="418.0" layoutY="112.0" onMouseClicked="#onMouseClickedDivisaDestino" prefHeight="143.0" prefWidth="360.0" scaleShape="false">
+                  <TableView fx:id="tvA" layoutX="418.0" layoutY="112.0" onMouseClicked="#onMouseClickedDivisaDestino" prefHeight="143.0" prefWidth="360.0" scaleShape="false" style=": ;">
                     <columns>
                       <TableColumn fx:id="isoColum2" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" resizable="false" text="_ISO" />
-                      <TableColumn fx:id="nombreColum2" maxWidth="280.0" minWidth="280.0" prefWidth="280.0" resizable="false" text="_NOMBRE" />
-                        <TableColumn fx:id="cambioColum2" maxWidth="1.0" minWidth="1.0" prefWidth="1.0" resizable="false" text="cambio2" visible="false" />
-                        <TableColumn fx:id="banderaColumn2" maxWidth="1.0" minWidth="1.0" prefWidth="1.0" resizable="false" text="bandera2" visible="false" />
+                      <TableColumn fx:id="nombreColum2" maxWidth="295.0" minWidth="295.0" prefWidth="295.0" resizable="false" text="_NOMBRE" />
                     </columns>
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
                   </TableView>
-                  <Label fx:id="lblDe" layoutX="329.0" layoutY="22.0" prefHeight="46.0" prefWidth="45.0" text="Label">
+                  <Label fx:id="lblDe" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="237.0" layoutY="22.0" prefHeight="46.0" prefWidth="137.0" text="Label" textAlignment="RIGHT" textFill="#63b83f">
                      <font>
                         <Font name="Arial Black" size="24.0" />
                      </font></Label>
-                  <Label fx:id="lblA" layoutX="418.0" layoutY="23.0" prefHeight="46.0" prefWidth="214.0" text="Label">
+                  <Label fx:id="lblA" layoutX="418.0" layoutY="23.0" prefHeight="46.0" prefWidth="214.0" text="Label" textFill="#63b83f">
                      <font>
                         <Font name="Arial Black" size="24.0" />
                      </font></Label>
-                  <ImageView fx:id="imgBandera1" fitHeight="53.0" fitWidth="106.0" layoutX="14.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fx:id="imgBandera2" fitHeight="53.0" fitWidth="106.0" layoutX="672.0" layoutY="46.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true" />
-                  <Label fx:id="lblDe1" alignment="CENTER_RIGHT" layoutX="137.0" layoutY="65.0" prefHeight="46.0" prefWidth="237.0" text="Label">
+                  <ImageView fx:id="imgBandera1" fitHeight="53.0" fitWidth="106.0" layoutX="14.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                     <effect>
+                        <DropShadow />
+                     </effect></ImageView>
+                  <ImageView fx:id="imgBandera2" fitHeight="66.0" fitWidth="123.0" layoutX="670.0" layoutY="36.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                     <effect>
+                        <DropShadow />
+                     </effect></ImageView>
+                  <Label fx:id="lblDe1" alignment="CENTER_RIGHT" layoutX="137.0" layoutY="65.0" prefHeight="46.0" prefWidth="237.0" text="Label" textFill="WHITE">
                      <font>
                         <Font name="Arial Black" size="16.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lblA1" layoutX="418.0" layoutY="65.0" prefHeight="46.0" prefWidth="264.0" text="Label">
+                  <Label fx:id="lblA1" layoutX="418.0" layoutY="65.0" prefHeight="46.0" prefWidth="264.0" text="Label" textFill="WHITE">
                      <font>
                         <Font name="Arial Black" size="16.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="txtMonto1" layoutX="124.0" layoutY="282.0" onKeyTyped="#txtMonto1InputTextChanged" prefHeight="54.0" prefWidth="250.0">
+                  <TextField fx:id="txtMonto1" alignment="CENTER_RIGHT" layoutX="124.0" layoutY="282.0" prefHeight="54.0" prefWidth="250.0" style="-fx-background-color: #3b3b3b; -fx-text-fill: white;">
                      <font>
-                        <Font name="Arial Bold Italic" size="24.0" />
+                        <Font name="Eras Bold ITC" size="24.0" />
                      </font></TextField>
-                  <TextField fx:id="txtMonto2" layoutX="418.0" layoutY="282.0" onKeyPressed="#txtMonto2InputTextChanged" onKeyTyped="#txtMonto2InputTextChanged" prefHeight="54.0" prefWidth="232.0">
+                  <TextField fx:id="txtMonto2" alignment="CENTER_RIGHT" layoutX="418.0" layoutY="282.0" prefHeight="54.0" prefWidth="232.0" style="-fx-background-color: #3b3b3b; -fx-text-fill: white;">
                      <font>
-                        <Font name="Arial Bold Italic" size="24.0" />
+                        <Font name="Eras Bold ITC" size="24.0" />
                      </font></TextField>
-                  <Label fx:id="lblDe2" layoutX="384.0" layoutY="19.0" prefHeight="46.0" prefWidth="27.0" text="=" textAlignment="CENTER">
+                  <Label fx:id="lblDe2" layoutX="383.0" layoutY="19.0" prefHeight="46.0" prefWidth="27.0" text="=" textAlignment="CENTER" textFill="#4fd3c4">
                      <font>
                         <Font name="Arial Black" size="36.0" />
                      </font>
                   </Label>
+                  <Label fx:id="lblS1" alignment="CENTER_RIGHT" layoutX="12.0" layoutY="286.0" prefHeight="46.0" prefWidth="102.0" text="Label" textAlignment="RIGHT" textFill="#4fd3c4">
+                     <font>
+                        <Font name="Lato Black" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblS2" layoutX="660.0" layoutY="286.0" prefHeight="46.0" prefWidth="108.0" text="Label" textFill="#4fd3c4">
+                     <font>
+                        <Font name="Lato Black" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblFecha" alignment="CENTER" contentDisplay="RIGHT" layoutX="124.0" layoutY="339.0" prefHeight="27.0" prefWidth="525.0" text="Label" textAlignment="RIGHT" textFill="#63b83f">
+                     <font>
+                        <Font name="Arial Black" size="18.0" />
+                     </font>
+                  </Label>
                </children></AnchorPane>
-      </content>
-    </Tab>
-    <Tab fx:id="tabConversorTemperatura" text="¨Conversor de temperatura">
-      <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
       </content>
     </Tab>
       <Tab fx:id="tabAdmin" text="Admin">
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <GridPane layoutX="63.0" layoutY="64.0" prefHeight="255.0" prefWidth="661.0">
+                  <GridPane layoutX="63.0" layoutY="200.0" prefHeight="108.0" prefWidth="661.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -90,23 +102,38 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Button fx:id="btnAdminUsuarios" mnemonicParsing="false" onAction="#btnAdminUsuariosOnAction" prefHeight="85.0" prefWidth="203.0" style="-fx-background-color: orange;" text="Administrar Usuarios">
+                        <Button fx:id="btnAdminUsuarios" mnemonicParsing="false" onAction="#btnAdminUsuariosOnAction" prefHeight="85.0" prefWidth="203.0" style="-fx-background-color: orange;" text="Usuarios">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>
                         </Button>
-                        <Button fx:id="btnAdminTCambio" contentDisplay="CENTER" layoutX="10.0" layoutY="95.0" mnemonicParsing="false" onAction="#btnAdminTCambioOnAction" prefHeight="85.0" prefWidth="203.0" style="-fx-background-color: orange;" text="Administrar Tipos de Cambio" textOverrun="LEADING_WORD_ELLIPSIS" GridPane.columnIndex="1">
+                        <Button fx:id="btnAdminTCambio" contentDisplay="CENTER" layoutX="10.0" layoutY="95.0" mnemonicParsing="false" onAction="#btnAdminTCambioOnAction" prefHeight="85.0" prefWidth="203.0" style="-fx-background-color: orange;" text="Tipos de Cambio" textOverrun="LEADING_WORD_ELLIPSIS" GridPane.columnIndex="1">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>
                         </Button>
-                        <Button fx:id="btnAdminDivisa" contentDisplay="CENTER" layoutX="231.0" layoutY="95.0" mnemonicParsing="false" onAction="#btnAdminDivisaOnAction" prefHeight="85.0" prefWidth="203.0" style="-fx-background-color: orange;" text="Administrar Divisas" textOverrun="LEADING_WORD_ELLIPSIS" GridPane.columnIndex="2">
+                        <Button fx:id="btnAdminDivisa" contentDisplay="CENTER" layoutX="231.0" layoutY="95.0" mnemonicParsing="false" onAction="#btnAdminDivisaOnAction" prefHeight="85.0" prefWidth="203.0" style="-fx-background-color: orange;" text="Divisas" textOverrun="LEADING_WORD_ELLIPSIS" GridPane.columnIndex="2">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>
                         </Button>
                      </children>
                   </GridPane>
+                  <ImageView fitHeight="112.0" fitWidth="146.0" layoutX="84.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/img/Recurso%203.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="112.0" fitWidth="146.0" layoutX="306.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/img/Recurso%206.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="112.0" fitWidth="146.0" layoutX="547.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/img/Recurso%204.png" />
+                     </image>
+                  </ImageView>
                </children></AnchorPane>
          </content>
       </Tab>

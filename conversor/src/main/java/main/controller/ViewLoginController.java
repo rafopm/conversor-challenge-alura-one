@@ -1,5 +1,6 @@
 package main.controller;
 
+import javafx.scene.image.Image;
 import main.dao.UsuarioDao;
 import main.model.Usuario;
 import javafx.application.Platform;
@@ -75,7 +76,7 @@ public class ViewLoginController implements Initializable {
             newStage.show();*/
 
             FXMLLoader loader = new FXMLLoader();
-            URI uri = Paths.get("src/main/java/com/challenge/conversor/view/ViewMain.fxml").toAbsolutePath().toUri();
+            URI uri = Paths.get("src/main/java/main/view/ViewMain.fxml").toAbsolutePath().toUri();
             loader.setLocation(uri.toURL());
             Parent root = loader.load();
             ViewMainController mainControllerInstancia = loader.getController();
@@ -85,6 +86,8 @@ public class ViewLoginController implements Initializable {
             Scene scene = new Scene(root);
             Stage newStage = new Stage();
             newStage.setTitle("Main");
+            URI uri2 = Paths.get("src/main/java/main/resources/img/Recurso 6.png").toAbsolutePath().toUri();
+            stage.getIcons().add(new Image(uri2.toURL().openStream()));
             newStage.setScene(scene);
             newStage.show();
 

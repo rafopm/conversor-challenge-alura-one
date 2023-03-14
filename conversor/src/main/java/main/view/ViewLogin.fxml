@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
@@ -10,18 +11,12 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane prefHeight="369.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.ViewLoginController">
+<AnchorPane prefHeight="369.0" prefWidth="600.0" style="-fx-background-color: #1f1f1f;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.ViewLoginController">
    <children>
-      <ImageView fitHeight="417.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../resources/candado.gif" />
-         </image>
-      </ImageView>
-      <GridPane layoutX="63.0" layoutY="246.0" prefHeight="140.0" prefWidth="417.0" AnchorPane.bottomAnchor="100.0">
+      <GridPane layoutX="63.0" layoutY="246.0" prefHeight="140.0" prefWidth="382.0" AnchorPane.bottomAnchor="100.0">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="181.0" minWidth="10.0" prefWidth="141.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="230.0" minWidth="10.0" prefWidth="230.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="181.0" minWidth="10.0" prefWidth="155.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="256.0" minWidth="10.0" prefWidth="256.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -36,7 +31,7 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </GridPane.margin>
                <font>
-                  <Font name="System Bold" size="26.0" />
+                  <Font name="System Bold" size="20.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
@@ -58,7 +53,7 @@
                   <DropShadow height="77.34" radius="45.582499999999996" spread="0.24" width="106.99" />
                </effect>
                <font>
-                  <Font name="System Bold" size="26.0" />
+                  <Font name="System Bold" size="20.0" />
                </font>
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -71,10 +66,15 @@
             </PasswordField>
          </children>
       </GridPane>
-      <Button fx:id="btnLogin" defaultButton="true" layoutX="486.0" layoutY="221.0" mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="39.0" prefWidth="50.0" text="Ir..." textFill="#313180">
+      <Button fx:id="btnLogin" defaultButton="true" layoutX="346.0" layoutY="276.0" mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="39.0" prefWidth="99.0" style="-fx-background-color: #4fd3c4;" text="Ingresar" textFill="#0a0700">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Button>
+      <ImageView fitHeight="88.0" fitWidth="52.0" layoutX="473.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/img/Recurso%202.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
