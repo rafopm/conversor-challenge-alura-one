@@ -9,7 +9,7 @@
 
 <AnchorPane minWidth="-Infinity" prefHeight="410.0" prefWidth="1011.0" style="-fx-border-style: solid;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.ViewDivisaController">
    <children>
-      <AnchorPane layoutX="19.0" layoutY="24.0" prefHeight="364.0" prefWidth="321.0" style="-fx-border-style: solid; -fx-border-color: orange;" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="672.0" AnchorPane.topAnchor="23.0">
+      <AnchorPane layoutX="19.0" layoutY="24.0" prefHeight="364.0" prefWidth="321.0" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="672.0" AnchorPane.topAnchor="23.0">
          <children>
             <Label layoutX="21.0" layoutY="14.0" text="Nombre:" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
             <TextField fx:id="txtNombre" layoutX="14.0" layoutY="41.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="35.0" />
@@ -26,7 +26,7 @@
             <TextField fx:id="txtPais" layoutX="10.0" layoutY="206.0" prefHeight="25.0" prefWidth="293.0" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="367.0" layoutY="21.0" prefHeight="368.0" prefWidth="622.0" style="-fx-border-style: solid; -fx-border-color: brown;">
+      <AnchorPane layoutX="367.0" layoutY="21.0" prefHeight="368.0" prefWidth="622.0">
          <children>
             <TableView fx:id="tvDivisa" layoutX="14.0" layoutY="14.0" prefHeight="346.0" prefWidth="580.0">
                <columns>

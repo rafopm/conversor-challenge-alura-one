@@ -29,7 +29,6 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class ViewLoginController implements Initializable {
-    ViewMainController ViewMainController;
     @FXML
     private Button btnLogin;
 
@@ -39,7 +38,7 @@ public class ViewLoginController implements Initializable {
     @FXML
     private PasswordField txtPassword;
     private UsuarioDao usuarioDao;
-    private Usuario usuarioSelect;
+
 
 
     public void initialize(URL url, ResourceBundle rb) {
@@ -62,19 +61,6 @@ public class ViewLoginController implements Initializable {
             Stage stage = (Stage) window ;
             stage.hide();
 
-/*
-            Parent root = FXMLLoader.load(uri.toURL());
-            ViewMainController mainControllerInstancia = (ViewMainController)loader.getController();
-            System.out.println("fdfdf"+state);
-            //mainControllerInstancia.recibeParametros(state);
-
-            Scene scene = new Scene(root);
-            Stage newStage = new Stage();
-            newStage.setTitle("Main");
-
-            newStage.setScene(scene);
-            newStage.show();*/
-
             FXMLLoader loader = new FXMLLoader();
             URI uri = Paths.get("src/main/java/main/view/ViewMain.fxml").toAbsolutePath().toUri();
             loader.setLocation(uri.toURL());
@@ -85,9 +71,9 @@ public class ViewLoginController implements Initializable {
 
             Scene scene = new Scene(root);
             Stage newStage = new Stage();
-            newStage.setTitle("Main");
+            newStage.setTitle("Conversor de monedas");
             URI uri2 = Paths.get("src/main/java/main/resources/img/Recurso 6.png").toAbsolutePath().toUri();
-            stage.getIcons().add(new Image(uri2.toURL().openStream()));
+            newStage.getIcons().add(new Image(uri2.toURL().openStream()));
             newStage.setScene(scene);
             newStage.show();
 

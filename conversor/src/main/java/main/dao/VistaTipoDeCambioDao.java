@@ -22,7 +22,7 @@ public class VistaTipoDeCambioDao {
 
         try {
 
-            String SQL = "select * from vista_tipodecambio order by fechaactualizacion;";
+            String SQL = "select * from vista_tipodecambio order by fechaactualizacion desc;";
             Connection connection = this.fabricaConexion.getConnection();
             PreparedStatement sentencia = connection.prepareStatement(SQL);
             ResultSet data = sentencia.executeQuery();

@@ -3,12 +3,12 @@ package main.model;
 import javafx.scene.image.ImageView;
 
 public class Divisa {
-    int iddivisa;
-    String nombre;
-    String iso;
-    String simbolo;
-    String pais;
-    String imagen;
+    private int iddivisa;
+    private String nombre;
+    private String iso;
+    private String simbolo;
+    private String pais;
+    private String imagen;
 
     public Divisa() {
     }

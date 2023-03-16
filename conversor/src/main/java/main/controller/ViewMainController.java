@@ -118,7 +118,6 @@ public class ViewMainController implements Initializable {
             {
                 if (ke.getCode().equals(KeyCode.ENTER))
                 {
-                    System.out.println("HOla desde enter");
                     valorTexto1 = Double.parseDouble(txtMonto1.getText());
                     Calcular("CalcularDestino", valorTexto1, indiceA);
                 }
@@ -270,7 +269,6 @@ public class ViewMainController implements Initializable {
     @FXML
     void onMouseClickedDivisaOrigen(MouseEvent mouseEvent) {
         if (tvDe.getSelectionModel().getSelectedItem() != null) {
-            //PoblarCamposDe();
             int index = tvDe.getSelectionModel().getSelectedIndex();
             Iso1 = tvDe.getItems().get(index).getIsoo();
             PoblarCampos(Iso1, Iso2);

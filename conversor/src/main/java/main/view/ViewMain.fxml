@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.image.*?>
@@ -31,11 +32,11 @@
                         <Insets />
                      </opaqueInsets>
                   </TableView>
-                  <Label fx:id="lblDe" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="237.0" layoutY="22.0" prefHeight="46.0" prefWidth="137.0" text="Label" textAlignment="RIGHT" textFill="#63b83f">
+                  <Label fx:id="lblDe" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="237.0" layoutY="22.0" prefHeight="46.0" prefWidth="137.0" text="Label" textAlignment="RIGHT" textFill="ORANGE">
                      <font>
                         <Font name="Arial Black" size="24.0" />
                      </font></Label>
-                  <Label fx:id="lblA" layoutX="418.0" layoutY="23.0" prefHeight="46.0" prefWidth="214.0" text="Label" textFill="#63b83f">
+                  <Label fx:id="lblA" layoutX="418.0" layoutY="23.0" prefHeight="46.0" prefWidth="214.0" text="Label" textFill="ORANGE">
                      <font>
                         <Font name="Arial Black" size="24.0" />
                      </font></Label>
@@ -47,12 +48,12 @@
                      <effect>
                         <DropShadow />
                      </effect></ImageView>
-                  <Label fx:id="lblDe1" alignment="CENTER_RIGHT" layoutX="137.0" layoutY="65.0" prefHeight="46.0" prefWidth="237.0" text="Label" textFill="WHITE">
+                  <Label fx:id="lblDe1" alignment="CENTER_RIGHT" layoutX="137.0" layoutY="65.0" prefHeight="46.0" prefWidth="237.0" text="Label" textFill="ORANGE">
                      <font>
                         <Font name="Arial Black" size="16.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lblA1" layoutX="418.0" layoutY="65.0" prefHeight="46.0" prefWidth="264.0" text="Label" textFill="WHITE">
+                  <Label fx:id="lblA1" layoutX="418.0" layoutY="65.0" prefHeight="46.0" prefWidth="264.0" text="Label" textFill="ORANGE">
                      <font>
                         <Font name="Arial Black" size="16.0" />
                      </font>
@@ -65,26 +66,27 @@
                      <font>
                         <Font name="Eras Bold ITC" size="24.0" />
                      </font></TextField>
-                  <Label fx:id="lblDe2" layoutX="383.0" layoutY="19.0" prefHeight="46.0" prefWidth="27.0" text="=" textAlignment="CENTER" textFill="#4fd3c4">
+                  <Label fx:id="lblDe2" layoutX="383.0" layoutY="19.0" prefHeight="46.0" prefWidth="27.0" text="=" textAlignment="CENTER" textFill="#ffd200">
                      <font>
                         <Font name="Arial Black" size="36.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lblS1" alignment="CENTER_RIGHT" layoutX="12.0" layoutY="286.0" prefHeight="46.0" prefWidth="102.0" text="Label" textAlignment="RIGHT" textFill="#4fd3c4">
+                  <Label fx:id="lblS1" alignment="CENTER_RIGHT" layoutX="12.0" layoutY="286.0" prefHeight="46.0" prefWidth="102.0" text="Label" textAlignment="RIGHT" textFill="#ffd200">
                      <font>
                         <Font name="Lato Black" size="36.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lblS2" layoutX="660.0" layoutY="286.0" prefHeight="46.0" prefWidth="108.0" text="Label" textFill="#4fd3c4">
+                  <Label fx:id="lblS2" layoutX="660.0" layoutY="286.0" prefHeight="46.0" prefWidth="108.0" text="Label" textFill="#ffd200">
                      <font>
                         <Font name="Lato Black" size="36.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lblFecha" alignment="CENTER" contentDisplay="RIGHT" layoutX="124.0" layoutY="339.0" prefHeight="27.0" prefWidth="525.0" text="Label" textAlignment="RIGHT" textFill="#63b83f">
+                  <Label fx:id="lblFecha" alignment="CENTER" contentDisplay="RIGHT" layoutX="124.0" layoutY="339.0" prefHeight="27.0" prefWidth="525.0" text="Label" textAlignment="RIGHT" textFill="ORANGE">
                      <font>
-                        <Font name="Arial Black" size="18.0" />
+                        <Font name="Lato Black Italic" size="18.0" />
                      </font>
                   </Label>
+                  <Line endX="665.0" layoutX="114.0" layoutY="268.0" startX="-100.0" stroke="#ffd200" />
                </children></AnchorPane>
       </content>
     </Tab>
